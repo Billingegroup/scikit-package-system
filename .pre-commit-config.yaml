@@ -23,6 +23,16 @@ repos:
         name: Prevent Commit to Main Branch
         args: ["--branch", "main"]
         stages: [pre-commit]
+  - repo: https://github.com/psf/black
+    rev: 24.4.2
+    hooks:
+      - id: black
+        exclude: '^({{ cookiecutter.github_repo_name }}/.*\.py|hooks/post_gen_project\.py)$' # {{ cookiecutter.github_repo_name }} and hooks/post_gen_project.py contains jinja variables
+  - repo: https://github.com/pycqa/flake8
+    rev: 7.0.0
+    hooks:
+      - id: flake8
+        exclude: '^({{ cookiecutter.github_repo_name }}/.*\.py|hooks/post_gen_project\.py)$' # Same comment as black above
   - repo: https://github.com/kynan/nbstripout
     rev: 0.7.1
     hooks:
