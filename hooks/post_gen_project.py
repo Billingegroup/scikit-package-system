@@ -9,7 +9,7 @@ def main():
     To ensure the package is installed correctly, run `pytest`
 
     For more info, please refer to the official documentation on Level 4 of sharing.
-    """
+    """  # noqa: F541, E501
     )
 
 
