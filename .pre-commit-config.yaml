@@ -32,7 +32,6 @@ repos:
     rev: 7.0.0
     hooks:
       - id: flake8
-        exclude: '^({{ cookiecutter.github_repo_name }}/tests/test_functions\.py|hooks/post_gen_project\.py)' # Same comment as black above
   - repo: https://github.com/kynan/nbstripout
     rev: 0.7.1
     hooks:
